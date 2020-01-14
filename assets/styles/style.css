@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC&display=swap');
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.main-name {
+    position: absolute;
+    color: wheat;
+    top: 50%;
+    left: 15%;
+    font-family: 'IM Fell Great Primer SC', serif;
+}
+
+.top-poster > img {
+    position: absolute;
+    height: 100vh;
+    right: 0;
+    margin-left: auto;
+}
