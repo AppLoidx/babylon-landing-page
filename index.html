@@ -114,18 +114,9 @@
     }
     
     window.addEventListener('resize', () => {
-        
-            let current = { width: renderer.width, height: renderer.height };
-            let ratio = current.width / current.height;
-            if (window.innerWidth / window.innerHeight >= ratio) {
-                var width = window.innerHeight * ratio;
-                var height = window.innerHeight;
-            } else {
-                var width = window.innerWidth;
-                var height = window.innerWidth / ratio;
-            }
-            renderer.view.style.width = `${ width }px`;
-            renderer.view.style.height = `${ height }px`;
+    
+            renderer.view.style.width = `${ window.innerWidth}px`;
+            renderer.view.style.height = `${ window.innerHeight }px`;
         
     });
 
