@@ -6,7 +6,11 @@
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="assets/styles/buttons.css">
     <link rel="stylesheet" href="assets/styles/loader.css">
-    
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
     <script>
         function onReady(callback) {
@@ -22,14 +26,20 @@
           document.querySelector(selector).style.display = visible ? 'block' : 'none';
         }
 
-        onReady(function() {
-          setVisible('.page', true);
-          setVisible('#loading', false);
+        $(window).on("load", function() {
+                setVisible('.page', true);
+                setVisible('#loading', false);
         });
+
     </script>
 </head>
 
 <body class="page">
+
+    <div id="loading">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/pixi.js/3.0.7/pixi.js"></script>
    
     <div class="top-poster">
@@ -156,10 +166,7 @@
  </div>
 -->
 
-<div id="loading">
-    <span class="loader"><span class="loader-inner"></span></span>
-    <span class="author-loader">Arthur Kupriyanov</span>
-</div>
+
 
 </body>
 </html>
