@@ -5,10 +5,31 @@
     <link rel="stylesheet" href="assets/styles/text-effect.css" type="text/css">
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="stylesheet" href="assets/styles/buttons.css">
+    <link rel="stylesheet" href="assets/styles/loader.css">
     
     <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <script>
+        function onReady(callback) {
+          var intervalId = window.setInterval(function() {
+            if (document.getElementsByTagName('body')[0] !== undefined) {
+              window.clearInterval(intervalId);
+              callback.call(this);
+            }
+          }, 1000);
+        }
+
+        function setVisible(selector, visible) {
+          document.querySelector(selector).style.display = visible ? 'block' : 'none';
+        }
+
+        onReady(function() {
+          setVisible('.page', true);
+          setVisible('#loading', false);
+        });
+    </script>
 </head>
-<body>
+
+<body class="page">
     <script src="https://cdn.jsdelivr.net/pixi.js/3.0.7/pixi.js"></script>
    
     <div class="top-poster">
@@ -126,6 +147,7 @@
 
 </script>
 
+
 <!--
      <div class="wrapper">
      <section>
@@ -133,6 +155,11 @@
      </section>
  </div>
 -->
+
+<div id="loading">
+    <span class="loader"><span class="loader-inner"></span></span>
+    <span class="author-loader">Arthur Kupriyanov</span>
+</div>
 
 </body>
 </html>
